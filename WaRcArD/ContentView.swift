@@ -52,24 +52,25 @@ struct ContentView: View {
         }
     }
     
-    func Deal() {
+     func Deal() {
         // Randomize the players card
-        playercards = "card" + String(Int.random(in: 2...14))
+       var playerCardValue = Int.random(in: 2...14)
+        
+        playercards = "card" + String(playerCardValue)
         
         // Randomize the cpus
-        
-        cpuCards = "card" + String(Int.random(in: 2...14))
+        var cpuCardValue  = Int.random(in: 2...14)
+        cpuCards = "card" + String(cpuCardValue)
         
         // Update The Score
         
         
-        if(playercards>cpuCards){
-            playerScore = playerScore  + 1
+        if(playerCardValue > cpuCardValue){
+            playerScore += 1
         }
-        else if(cpuCards>playercards){
-            cpuScore = cpuScore + 1
+        else if(cpuCardValue > playerCardValue){
+            cpuScore += 1
         }
-        
         
     }
 }
